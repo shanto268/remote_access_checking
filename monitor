@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "====================== LOOKING AT CONNECTED USERS ======================"
+w 
+echo ""
+echo "====================== DETAILED LOOK ======================"
+who -a
+echo ""
+echo "====================== LOOKING AT LOGGED IN PROFILES ======================"
+last | grep "logged in" 
+echo ""
+echo "====================== LOOKING AT ESTABLISHED CONNECTIONS ======================"  
+lsof -i | grep EST
+echo ""
+echo "====================== LOOKING AT ANY LOG FILES LEFT BEHIND ======================"
+grep sshd /var/log/system.log
